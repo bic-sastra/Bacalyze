@@ -16,6 +16,9 @@ params.annotation = 'no'
 params.species = ''
 params.fasta_reads = ''
 params.assembled = ''
+params.association_threshold = '10000'
+params.min_support = '0.1'
+params.ram_limit = '4' // in GB
 
 process indexReference {
     input:
@@ -546,8 +549,8 @@ process argAssociation {
     mges['end'] = mges['end'].astype(int)
     for _, arg in args.iterrows():
         for _, mge in mges.iterrows():
-            if (abs(arg['start'] - mge['start']) <= 10000 or abs(arg['end'] - mge['end']) <= 10000) and arg['contig'] == mge['contig']:
-                
+            if (abs(arg['start'] - mge['start']) <= ${params.association_threshold} or abs(arg['end'] - mge['end']) <= ${params.association_threshold}) and arg['contig'] == mge['contig']:
+
                 associations.append({
                     'ARG': arg['Resistance gene'],
                     'MGE': mge['name'],
@@ -590,8 +593,8 @@ import resource
 print('Imported resource')
 # Limit RAM usage to 4 GB
 soft, hard = resource.getrlimit(resource.RLIMIT_AS)
-resource.setrlimit(resource.RLIMIT_AS, (5 * 1024 * 1024 * 1024, hard))
-print(f'Set resource limit to 5 GB')
+resource.setrlimit(resource.RLIMIT_AS, (${params.ram_limit} * 1024 * 1024 * 1024, hard))
+print(f'Set resource limit to ${params.ram_limit} GB')
 csv_dir = '${params.outdir}/mge/'
 mge_data = {}
 
@@ -680,7 +683,7 @@ if genome_mge_df.shape[0] != 1:
     df.to_csv('${params.outdir}/transaction_data.csv', index=False)
 # Run the apriori algorithm
     print('Running Apriori algorithm')
-    frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True, low_memory=True)
+    frequent_itemsets = apriori(df, min_support=${params.min_support}, use_colnames=True, low_memory=True)
     print('Apriori algorithm completed')
     frequent_itemsets.to_csv('${params.outdir}/frequent_itemsets.csv', index=False)
     if frequent_itemsets.shape[0] <= 13087:
@@ -862,7 +865,7 @@ try:
                 continue
         
             for index, row in df.iterrows():
-                if row['Distance'] <= 10000:
+                if row['Distance'] <= ${params.association_threshold}:
                     arg = row['ARG']
                     mge = row['MGE']
                     distance = row['Distance']
@@ -943,7 +946,7 @@ for filename in os.listdir(csv_dir):
         
 
         for index, row in df.iterrows():
-            if row['Distance'] <= 10000:
+            if row['Distance'] <= ${params.association_threshold}:
                 arg = row['ARG']
                 mge = row['MGE']
                 arg_start = row['ARG_START']
