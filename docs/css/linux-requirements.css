@@ -1,0 +1,121 @@
+header {
+        text-align: center;
+}
+h1 {
+    color: #01a0e4;
+    border: 2px solid #3e3d8d;
+    display: inline-block;
+    padding: 20px;
+}
+* {
+    box-sizing: border-box;
+    margin: 15px 0 15px 0;
+    transition: 1s;
+}
+body {
+    background: linear-gradient(to right, lightgreen 30%, lightblue);
+}
+img {
+    height: 100px;
+}
+.splash {
+    float: left;
+    margin-left: 15px;
+}
+.sastralogo {
+    float: right;
+    margin-right: 15px;
+}
+a, a:visited {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #01a0e4;
+}
+table {
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+}
+td {
+    border: 1px solid black;
+}
+th {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #01a0e4;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr {
+    transition: 0.5s;
+}
+tr:hover {
+    background-color: #3e3d8d;
+    color: white;
+    transition: 0.5s;
+}   
+div {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+article, input {
+    background: linear-gradient(to right, lightyellow 35%, pink);
+    padding: 5px;
+    border: 2px solid white;
+    margin: 15px;
+}
+article:hover {
+    background: lightblue;
+    
+}
+
+h1:hover {
+    border: 2px solid #01a0e4;
+    color: #3e3d8d;
+
+}
+form {
+    margin: 1.5em;
+    display: inline-block;
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+input {
+            width: 300px;
+            padding: 10px;
+            margin-right: 5px;
+            margin-bottom: 20px;
+}
+input:active, input:focus {
+    outline: none;
+    border: 2px solid #01a0e4;
+    box-shadow: 0 0 5px lightgreen;
+}
+nav {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    background-color: transparent;
+    color: #01a0e4;
+    padding: 10px;
+    margin: 0;
+    display: block;
+    text-decoration: none;
+}
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+    color: black;
+}
+nav ul li a {
+    color: #01a0e4;
+    font-weight: normal;
+}

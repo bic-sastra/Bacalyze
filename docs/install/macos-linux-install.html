@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS and Linux (Docker) Installation - Bacalyze</title>
+    <link rel="stylesheet" href="../css/macos-linux-install.css">
+        <link rel="icon" href="../img/Bacalyze.ico">
+
+</head>
+<body>
+    <img class="splash" src="../img/splash.png">
+    <img class="sastralogo" src="../img/sastralogo.jpg">
+    <header><h1>macOS and Linux (Docker) Installation - Bacalyze</h1></header>
+    <article><h2>Follow the steps below to install Bacalyze on macOS:</h2>
+        <ol>
+            <li>Download the archive file from the <a href="https://www.github.com/bic-sastra/Bacalyze/releases">Github releases page</a>.</li>
+            <li>Install docker desktop for mac from <a href="https://docs.docker.com/desktop/setup/install/mac-install/" target="_blank">here</a>.</li>
+            <li>Extract the archive into <code>~/Documents/Bacalyze</code>. Create the folder if necessary</li>
+            <li>Make sure the directory structure is <code>~/Documents/Bacalyze/DockerFile/</code>.</li>
+            <li>Open a terminal inside the <code>~/Documents/Bacalyze/DockerFile/</code> directory.</li>
+            <li>Run <code>docker build -t kani .</code>. Note: Include the period (.) at the end.</li>
+        </ol>
+                <p>If you encounter any issues during installation, please refer to the <a href="../requirements.html" target="_blank">Requirements</a> page to ensure your system meets the minimum requirements.</p>
+    <div><a class="support" href="mailto:anan-265@outlook.com?subject=Installation%20Issue%20in%20macOS&body=Please%20describe%20the%20issue%20you%20are%20facing%20below%20this%20line.">Contact Support for Installation Issues in macOS</a></div>
+    </article>
+    <article>
+        <h2>Follow the steps below to install Bacalyze on Linux inside Docker environment:</h2>
+        <ol>
+            <li>Install docker for linux. Please refer to docker's documentation to install according to their instructions for your specific linux distribution.</li>
+            <li>Configure docker to run without sudo. This is necessary to prevent permission issues, and to make sure that the pipeline is accessing your documents directory.</li>
+            <li>Download the archive file from the <a href="https://www.github.com/bic-sastra/Bacalyze/releases">Github releases page</a>.</li>
+            <li>Extract the archive into <code>~/Documents/Bacalyze</code>. Create the folder if necessary</li>
+            <li>Make sure the directory structure is <code>~/Documents/Bacalyze/DockerFile/</code>.</li>
+            <li>Open a terminal inside the <code>~/Documents/Bacalyze/DockerFile/</code> directory.</li>
+            <li>Run <code>docker build -t kani .</code>. Note: Include the period (.) at the end.</li>
+        </ol>
+            <p>If you encounter any issues during installation, please refer to the <a href="../req/requirements.html" target="_blank">Requirements</a> page to ensure your system meets the minimum requirements.</p>
+    <div><a class="support" href="mailto:anan-265@outlook.com?subject=Installation%20Issue%20in%20Linux&body=Please%20describe%20the%20issue%20you%20are%20facing%20below%20this%20line.">Contact Support for Installation Issues in Linux</a></div>
+    </article>
+    <nav>
+    <ul>
+        <li><a href="../index.html">Home</a></li> |
+        <li><a href="../req/requirements.html">Requirements</a></li> |
+        <li><a href="../req/linux-requirements.html">Linux Requirements</a></li> | 
+        <li><a href="./windows-install.html">Windows Installation</a></li> | 
+        <li><a href="./linux-install.html">Linux (Native) Installation</a></li> | 
+        <li>macOS and Linux (Docker) Installation</li>
+    </ul>
+</nav>
+    <footer>
+        <p>&copy; 2024 - Present Anantha Venkata Subramanyam G & Bioinformatics Center SASTRA. This software is licensed under GNU AGPLv3.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('../img/404.png'), linear-gradient(to right, lightgreen 30%, lightblue);
+            background-repeat: no-repeat;
+            color: red;
+            background-size: cover;
+            background-clip: border-box;
+            background-origin: border-box;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        * {
+            border-radius: 3em;
+            box-sizing: border-box;
+        }
+        img {
+    height: 100px;
+    border-radius: 0;
+}
+        .splash {
+    float: left;
+    margin-left: 15px;
+}
+.sastralogo {
+    float: right;
+    margin-right: 15px;
+}
+        div {
+            background-color: white;
+            padding: 3em;
+            border: 1em double red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            width: 90%;
+            max-width: 500px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 0.2em solid blue;
+            background-color: blue;
+            padding: 0.5em;
+            transition: 1s;
+            display: block;
+            margin: 0.5em;
+        }
+        a:hover {
+            background-color: lightblue;
+            color: darkblue;
+            transition: 1s;
+        }
