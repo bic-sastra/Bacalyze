@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Direct links to your sitemaps
+Sitemap: https://bic-sastra.github.io/Bacalyze/sitemap.xml
